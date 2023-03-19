@@ -118,6 +118,7 @@ section {
 .header__container {
   display: flex;
   align-items: center;
+  margin-right: 276px;
 }
 
 /*Logo*/
