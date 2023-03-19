@@ -90,15 +90,29 @@ section {
 .link {
   text-decoration: none;
   color: inherit;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .header {
   border-bottom: 1px solid var(--header-shadow-line);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 80px;
+  }
 }
 
 .header .container {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 .header__container {
@@ -109,10 +123,16 @@ section {
 /*Logo*/
 .header__logo {
   font-family: 'Raleway';
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1.2;
   color: var(--color-logo);
   text-decoration: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .header__logo {
+    font-size: 26px;
+  }
 }
 
 .header__logo span {
@@ -126,9 +146,21 @@ section {
 }
 
 .site-nav {
-  display: flex;
-  margin: 0;
-  margin-left: 93px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .site-nav {
+    display: flex;
+    margin: 0;
+    margin-left: 93px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .site-nav {
+    margin-left: 87px;
+  }
 }
 
 .site-nav li {
@@ -145,8 +177,14 @@ section {
 
 .icon {
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 8px;
   fill: currentColor;
+}
+
+@media screen and (min-width: 1200px) {
+  .icon {
+    margin-right: 10px;
+  }
 }
 
 .icon:hover,
@@ -164,10 +202,6 @@ section {
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.02em;
-
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .nav-link:hover,
@@ -202,15 +236,41 @@ section {
 }
 
 .address-nav {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .address-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .address-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+  }
 }
 
 .address-nav .item + .item {
   margin-left: 50px;
+}
+
+.header__address-link {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 1200px) {
+  .header__address-link {
+    font-size: 14px;
+  }
 }
 
 .address__link {
@@ -218,15 +278,9 @@ section {
   color: var(--primary-text-color);
   text-decoration: none;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  /* display: flex;
-  align-items: center; */
-
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 @media screen and (min-width: 1200px) {
@@ -255,6 +309,96 @@ section {
   margin-right: 10px;
   content: '';
   background-size: contain;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 40px 48px;
+  background-color: var(--bg-color-main);
+  transform: translateX(100%);
+  transition: transform 400ms;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu {
+  margin-bottom: auto;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.menu-link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+  color: var(--color-link);
+  margin-bottom: 32px;
+}
+
+.mobile-contacts {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+
+  margin-bottom: 64px;
+}
+
+.mobile-menu-email {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.mobile-socials {
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.mobile-socials-line {
+  width: 22px;
+  height: 0px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transform: rotate(90deg);
+  margin: 0 10px;
 }
 
 /*Header*/
