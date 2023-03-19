@@ -121,6 +121,12 @@ section {
   margin-right: 276px;
 }
 
+@media screen and (min-width: 768px) {
+  .header__container {
+    margin-right: auto;
+  }
+}
+
 /*Logo*/
 .header__logo {
   font-family: 'Raleway';
@@ -242,8 +248,8 @@ section {
 
 @media screen and (min-width: 768px) {
   .address-nav {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    column-gap: 10px;
     margin: 0;
     padding: 0;
   }
@@ -260,8 +266,10 @@ section {
   }
 }
 
-.address-nav .item + .item {
-  margin-left: 50px;
+@media screen and (min-width: 1200px) {
+  .address-nav .item + .item {
+    margin-left: 50px;
+  }
 }
 
 .header__address-link {
