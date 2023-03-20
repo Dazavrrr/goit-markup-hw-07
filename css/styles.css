@@ -1463,13 +1463,13 @@ textarea:hover {
 
 @media screen and (min-width: 480px) {
   .footer-policy input {
-    max-width: 450px;
+    min-width: 450px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer-policy input {
-    max-width: 358px;
+    min-width: 358px;
   }
 }
 
